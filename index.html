@@ -7,15 +7,15 @@
     <style>
         body {
             margin: 0;
-            padding: 0;
+            padding: 20px;
             display: flex;
             justify-content: center;
-            align-items: center;
+            align-items: flex-start;
             min-height: 100vh;
             background: linear-gradient(45deg, #ffccd5, #ffe6e6);
             font-family: 'Arial', sans-serif;
             text-align: center;
-            overflow: hidden;
+            overflow-y: auto;
         }
         .proposal {
             padding: 30px;
@@ -105,6 +105,7 @@
             opacity: 0;
             transform: translateX(-50%);
             animation: floatHeart 6s infinite;
+            z-index: 1;
         }
         @keyframes floatHeart {
             0% { transform: translate(-50%, 0); opacity: 0; }
@@ -112,7 +113,11 @@
             100% { transform: translate(-50%, -120vh); opacity: 0; }
         }
         @media (max-width: 600px) {
-            .proposal { padding: 20px; }
+            body {
+                align-items: flex-start;
+                padding: 10px;
+            }
+            .proposal { padding: 20px; margin-top: 20px; }
             h1 { font-size: 1.8em; }
             .hidden img { width: 150px; }
         }
